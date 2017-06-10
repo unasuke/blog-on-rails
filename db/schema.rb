@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170609165005) do
+ActiveRecord::Schema.define(version: 20170610095913) do
 
   create_table "articles", force: :cascade do |t|
     t.string "title", null: false
@@ -18,6 +18,13 @@ ActiveRecord::Schema.define(version: 20170609165005) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "path", default: "null", null: false
+  end
+
+  create_table "tags", force: :cascade do |t|
+    t.string "name", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["name"], name: "index_tags_on_name", unique: true
   end
 
 end
