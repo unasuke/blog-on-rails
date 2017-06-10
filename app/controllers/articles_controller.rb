@@ -6,4 +6,7 @@ class ArticlesController < ApplicationController
   def show
     @article = Article.find_by(path: params[:path])
   end
+
+  def new
+  end
 end
