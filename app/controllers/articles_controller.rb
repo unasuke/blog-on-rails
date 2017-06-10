@@ -9,4 +9,13 @@ class ArticlesController < ApplicationController
 
   def new
   end
+
+  def create
+    Article.create!(
+      title: params[:article][:title],
+      body: params[:article][:body],
+      path: params[:article][:path]
+    )
+    redirect_to root_path
+  end
 end
